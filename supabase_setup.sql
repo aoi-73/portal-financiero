@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS public.cuentas (
   numero_cuenta  TEXT NOT NULL,
   saldo          NUMERIC(12,2) NOT NULL DEFAULT 0,
   moneda         TEXT NOT NULL DEFAULT 'PEN',
-  created_at     TIMESTAMPTZ DEFAULT now()
+  created_at     TIMESTAMPTZ DEFAULT now(),
+  UNIQUE (user_id, tipo)
 );
 
 -- ── 2. Tabla: transacciones ───────────────────────────────
